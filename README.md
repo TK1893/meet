@@ -15,7 +15,7 @@ So that I can see a list of events taking place in that city .
 
 When user hasn’t searched for a specific city, show upcoming events from all cities.
 
-**Scenario 1 with Gherkin’s syntax**
+### Scenario 1 with Gherkin’s syntax
 
 **Given** user hasn’t searched for any city.  
 **When** the user opens the app,  
