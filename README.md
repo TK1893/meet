@@ -8,6 +8,21 @@ Meet App is a serverless, progressive web application (PWA) built with React usi
 
 ### Filter Events By City
 
+#### User Story
+
+As a user, I should be able to filter events by city ,
+So that I can see a list of events taking place in that city .
+
+#### Scenario 1
+
+When user hasn’t searched for a specific city, show upcoming events from all cities.
+
+##### Gherkin’s syntax ( Given-When-Then )
+
+Given user hasn’t searched for any city;
+When the user opens the app;
+Then the user should see a list of upcoming events.
+
 - **Filter Events by City**: Search for events in a specific city.
 - **Show/Hide Event Details**: Toggle the display of event details.
 - **Specify Number of Events**: Determine the number of events displayed.
