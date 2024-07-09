@@ -49,10 +49,6 @@ Meet App ist eine serverlose, progressive Webanwendung (PWA) entwickelt mit Reac
 - **Progressive Web Apps**: Implementierung von PWA-Funktionalitäten
 - **Data Visualization**: Implementierung von Datenvisualisierungsfeatures
 
-## Mock-ups & Assets
-
-Siehe [Mock-ups und andere Assets](./mockups) für weitere Details und Designvorschläge.
-
 ## Advanced Features (Optional)
 
 - Nutzung des Lambda Inline Editors
