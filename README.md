@@ -17,12 +17,123 @@ So that I can see a list of events taking place in that city .
 - **When** the user opens the app,
 - **Then** the user should see a list of upcoming events.
 
-<!-- - **Filter Events by City**: Search for events in a specific city.
-- **Show/Hide Event Details**: Toggle the display of event details.
-- **Specify Number of Events**: Determine the number of events displayed.
-- **Offline Usage**: The app works offline.
-- **App Shortcut**: Add a shortcut to the home screen.
-- **Event Visualization**: Display charts to visualize event data. -->
+---
+
+# App Features & Scenarios
+
+## Filter Events By City ( # Feature 1 )
+
+### User Story
+
+As a user, I should be able to filter events by city,  
+So that I can see a list of events taking place in that city.
+
+### Scenario 1 ( with Gherkin’s syntax )
+
+- **Given** user hasn’t searched for any city;
+- **When** the user opens the app;
+- **Then** the user should see a list of upcoming events.
+
+### Scenario 2 ( with Gherkin’s syntax )
+
+- **Given** the main page is open;
+- **When** user starts typing in the city textbox;
+- **Then** the user should receive a list of cities (suggestions) that match what they’ve typed.
+
+### Scenario 3 ( with Gherkin’s syntax )
+
+- **Given** user was typing “Berlin” in the city textbox AND the list of suggested cities is showing;
+- **When** the user selects a city (e.g., “Berlin, Germany”) from the list;
+- **Then** the city should be changed to that city (i.e., “Berlin, Germany”) AND the user should receive a list of upcoming events in that city.
+
+## Show/Hide Event Details ( # Feature 2 )
+
+### User Story
+
+As a user, I should be able to expand and hide the details of an event,  
+So that I have a clear view of the list of all events but can also open the details of an event if desired.
+
+### Scenario 1 ( with Gherkin’s syntax )
+
+- **Given** the user has selected the city of Berlin for the event search;
+- **When** the user confirms the selection;
+- **Then** a list with all upcoming events of the city will be displayed - the details of the individual events are hidden by default.
+
+### Scenario 2 ( with Gherkin’s syntax )
+
+- **Given** the user has opened the view with the list of all upcoming events in Berlin;
+- **When** the user selects an event by clicking on a “Show-Details”-Button;
+- **Then** the event will be expanded with its details.
+
+### Scenario 3 ( with Gherkin’s syntax )
+
+- **Given** the user expanded an event from the list for more details;
+- **When** the user clicks on the Hide details button;
+- **Then** event will then be collapsed in its detail view to return to the list of all events.
+
+## Specify Number of Events ( # Feature 3 )
+
+### User Story
+
+As a user, I should be able to determine the number of events displayed,  
+So that the list of events remains manageable.
+
+### Scenario 1 ( with Gherkin’s syntax )
+
+- **Given** the user selected the city (Berlin) when searching for events;
+- **When** the user does not specify the number of events to be displayed;
+- **Then** 32 events will be displayed in the list by default.
+
+### Scenario 2 ( with Gherkin’s syntax )
+
+- **Given** the user selected the city (Berlin) when searching for events;
+- **When** the user enters the number of events to be displayed via the input field provided;
+- **Then** the number of events displayed will change according to the user input.
+
+## Use the App When Offline ( # Feature 4 )
+
+### User Story
+
+As a user, I should be able to see cached data when there’s no internet connection,  
+So that I can still access event information offline.
+
+### Scenario 1 ( with Gherkin’s syntax )
+
+- **Given** user made an event search for the desired city and received the search results in a list of events;
+- **When** the user has no Internet connection;
+- **Then** he will still have access to the event information offline via the cached data.
+
+### Scenario 2 ( with Gherkin’s syntax )
+
+- **Given** user made an event search for the desired city and received the search results in a list of events;
+- **When** the user has no internet connection but tries to change a search parameter (city, number of events);
+- **Then** the app will display a corresponding error message "Offline no search change available”.
+
+## Add an App Shortcut to the Home Screen ( # Feature 5 )
+
+### User Story
+
+As a user, I should be able to install the meet app as a shortcut on my device home screen,  
+So that I can quickly access the app directly from my home screen.
+
+### Scenario 1 ( with Gherkin’s syntax )
+
+- **Given** the user wants to have faster access to the app via his device;
+- **When** the user installs the app as a shortcut on the device's home screen;
+- **Then** he will be able to open the app quickly via the shortcut.
+
+## Display Charts Visualizing Event Details ( # Feature 6 )
+
+### User Story
+
+As a user, I should be able to see a chart with the number of upcoming events in each city,  
+So that I can easily visualize and compare the event distribution across different cities.
+
+### Scenario 1 ( with Gherkin’s syntax )
+
+- **Given** the user made an event search for a specific city and received the search results in a list of events in the main view;
+- **When** the user navigates to the charts section;
+- **Then** a chart will be displayed with the number of upcoming events in the selected city.
 
 ## Technical Requirements
 
