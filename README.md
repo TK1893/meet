@@ -2,16 +2,15 @@
 
 Meet App is a serverless, progressive web application (PWA) built with React using a Test-Driven Development (TDD) approach. The app uses the Google Calendar API to fetch upcoming events.
 
-# App Features & Scenarios
+## App Features & Scenarios
 
-## Feature 1: Filter Events By City
+### Feature 1: Filter Events By City
 
-##### User Story
-
+**User Story**  
 As a user, I should be able to filter events by city ,
 So that I can see a list of events taking place in that city .
 
-##### Scenario 1
+### Scenario 1
 
 When user hasn’t searched for a specific city, show upcoming events from all cities.
 
