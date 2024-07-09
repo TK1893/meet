@@ -2,30 +2,32 @@
 
 ## Objective
 
-Meet App ist eine serverlose, progressive Webanwendung (PWA) entwickelt mit React unter Verwendung von Test-Driven Development (TDD). Die App nutzt die Google Calendar API, um bevorstehende Events abzurufen.
+Meet App is a serverless, progressive web application (PWA) built with React using a Test-Driven Development (TDD) approach. The app uses the Google Calendar API to fetch upcoming events.
 
 ## Features
 
-- **Filter Events by City**: Suche nach Events in einer bestimmten Stadt.
-- **Show/Hide Event Details**: Anzeige und Verbergen von Event-Details.
-- **Specify Number of Events**: Bestimmen der Anzahl der angezeigten Events.
-- **Offline Nutzung**: App funktioniert auch ohne Internetverbindung.
-- **App Shortcut**: Hinzufügen eines Shortcuts zur Startseite.
-- **Event-Visualisierung**: Anzeige von Diagrammen zur Visualisierung von Event-Daten.
+### Filter Events By City
+
+- **Filter Events by City**: Search for events in a specific city.
+- **Show/Hide Event Details**: Toggle the display of event details.
+- **Specify Number of Events**: Determine the number of events displayed.
+- **Offline Usage**: The app works offline.
+- **App Shortcut**: Add a shortcut to the home screen.
+- **Event Visualization**: Display charts to visualize event data.
 
 ## Technical Requirements
 
 - **Framework**: React
-- **TDD**: Entwicklung mithilfe von Test-Driven Development
-- **API**: Nutzung der Google Calendar API und OAuth2
-- **Serverless**: Einsatz von AWS Lambda für serverlose Funktionen
+- **TDD**: Development using Test-Driven Development
+- **API**: Use of Google Calendar API and OAuth2
+- **Serverless**: Use AWS Lambda for serverless functions
 - **Hosting**: GitHub Pages
-- **Kompatibilität**: Unterstützt neueste Versionen von Chrome, Firefox, Safari, Edge, Opera und IE11
-- **Responsives Design**: Optimiert für alle Bildschirmgrößen
-- **PWA-Checkliste**: Erfüllt die Lighthouse PWA-Kriterien
-- **Datenvisualisierung**: Implementierung von Diagrammen
-- **Testabdeckung**: Mindestens 90% Testabdeckung
-- **Monitoring**: Integration eines Performance-Monitoring-Tools
+- **Compatibility**: Supports latest versions of Chrome, Firefox, Safari, Edge, Opera, and IE11
+- **Responsive Design**: Optimized for all screen sizes
+- **PWA Checklist**: Passes the Lighthouse PWA criteria
+- **Data Visualization**: Implementation of charts
+- **Test Coverage**: At least 90% test coverage
+- **Monitoring**: Integration of a performance monitoring tool
 
 ## Project Requirements
 
@@ -38,27 +40,27 @@ Meet App ist eine serverlose, progressive Webanwendung (PWA) entwickelt mit Reac
 
 ## Deliverables
 
-- **TDD & Test Scenarios**: Erstellung von User Stories und Testszenarien
-- **Serverless Functions & Authentication**: Verbindung der App mit einer geschützten API und Implementierung von OAuth
-- **AWS Lambda Functions**: Schreiben und Testen von Lambda-Funktionen
-- **Unit Testing**: Schreiben und Testen von Unit-Tests
-- **Integration Testing**: Schreiben und Testen von Integrationstests
-- **User Acceptance Testing & End-to-End Testing**: Schreiben und Durchführen von Akzeptanztests und End-to-End-Tests
-- **Continuous Delivery**: Integration von CI/CD-Praktiken und APM-Tools
-- **Object-Oriented Programming (OOP)**: Implementierung von OOP-Konzepten
-- **Progressive Web Apps**: Implementierung von PWA-Funktionalitäten
-- **Data Visualization**: Implementierung von Datenvisualisierungsfeatures
+- **TDD & Test Scenarios**: Creation of user stories and test scenarios
+- **Serverless Functions & Authentication**: Connecting the app with a protected API and implementing OAuth
+- **AWS Lambda Functions**: Writing and testing Lambda functions
+- **Unit Testing**: Writing and testing unit tests
+- **Integration Testing**: Writing and testing integration tests
+- **User Acceptance Testing & End-to-End Testing**: Writing and conducting acceptance and end-to-end tests
+- **Continuous Delivery**: Integration of CI/CD practices and APM tools
+- **Object-Oriented Programming (OOP)**: Implementation of OOP concepts
+- **Progressive Web Apps**: Implementation of PWA functionalities
+- **Data Visualization**: Implementation of data visualization features
 
 ## Advanced Features (Optional)
 
-- Nutzung des Lambda Inline Editors
-- Styling mit React-Bootstrap
-- End-to-End-Tests mit Puppeteer
-- QA und Bugfixing
+- Use the Lambda inline editor
+- Style with React-Bootstrap
+- End-to-End testing with Puppeteer
+- QA and bug fixing
 
 ## Getting Started
 
-1. Klone das Repository
+1. Clone the repository
    ```sh
-   git clone https://github.com/dein-benutzername/meet-app.git
+   git clone https://github.com/your-username/meet-app.git
    ```
