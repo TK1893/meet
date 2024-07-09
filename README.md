@@ -17,9 +17,9 @@ When user hasn’t searched for a specific city, show upcoming events from all c
 
 **Scenario 1 with Gherkin’s syntax**
 
-- **Given** user hasn’t searched for any city.
-- **When** the user opens the app,
-- **Then** the user should see a list of upcoming events.
+**Given** user hasn’t searched for any city.  
+**When** the user opens the app,  
+**Then** the user should see a list of upcoming events.
 
 <!-- - **Filter Events by City**: Search for events in a specific city.
 - **Show/Hide Event Details**: Toggle the display of event details.
