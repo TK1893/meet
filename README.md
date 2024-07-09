@@ -29,7 +29,7 @@ So that I can see a list of events taking place in that city.
 - **When** the user selects a city (e.g., “Berlin, Germany”) from the list;
 - **Then** the city should be changed to that city (i.e., “Berlin, Germany”) AND the user should receive a list of upcoming events in that city.
 
-## Show/Hide Event Details ( # Feature 2 )
+## Feature (2) - Show/Hide Event Details
 
 ### User Story
 
@@ -54,7 +54,7 @@ So that I have a clear view of the list of all events but can also open the deta
 - **When** the user clicks on the Hide details button;
 - **Then** event will then be collapsed in its detail view to return to the list of all events.
 
-## Specify Number of Events ( # Feature 3 )
+## Feature (3) - Specify Number of Events
 
 ### User Story
 
@@ -73,7 +73,7 @@ So that the list of events remains manageable.
 - **When** the user enters the number of events to be displayed via the input field provided;
 - **Then** the number of events displayed will change according to the user input.
 
-## Use the App When Offline ( # Feature 4 )
+## Feature (4) - Use the App When Offline
 
 ### User Story
 
@@ -92,7 +92,7 @@ So that I can still access event information offline.
 - **When** the user has no internet connection but tries to change a search parameter (city, number of events);
 - **Then** the app will display a corresponding error message "Offline no search change available”.
 
-## Add an App Shortcut to the Home Screen ( # Feature 5 )
+## Feature (5) - Add an App Shortcut to the Home Screen
 
 ### User Story
 
@@ -105,7 +105,7 @@ So that I can quickly access the app directly from my home screen.
 - **When** the user installs the app as a shortcut on the device's home screen;
 - **Then** he will be able to open the app quickly via the shortcut.
 
-## Display Charts Visualizing Event Details ( # Feature 6 )
+## Feature (6) - Display Charts Visualizing Event Details
 
 ### User Story
 
