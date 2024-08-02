@@ -3,17 +3,11 @@
 const { google } = require('googleapis'); // Import googleapis package
 const calendar = google.calendar('v3'); // Import googleapis package
 //Geltungsbereiche / Access Levels festlegen
-const SCOPES = [
-  'https://www.googleapis.com/auth/calendar.events.public.readonly',
-];
+const SCOPES = ['https://www.googleapis.com/auth/calendar.events.public.readonly'];
 const { CLIENT_SECRET, CLIENT_ID, CALENDAR_ID } = process.env; // process.env bedeutet dass der Wert auf den verwiesen wird in config.json steht
 const redirect_uris = ['https://TK1893.github.io/meet/'];
 
-const oAuth2Client = new google.auth.OAuth2(
-  CLIENT_ID,
-  CLIENT_SECRET,
-  redirect_uris[0]
-);
+const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, redirect_uris[0]);
 // **  getAuthURL  *******************************************************
 module.exports.getAuthURL = async () => {
   const authUrl = oAuth2Client.generateAuthUrl({
@@ -75,9 +69,7 @@ module.exports.getAccessToken = async (event) => {
 // **  getCalendarEvents  ****************************************************
 module.exports.getCalendarEvents = async (event) => {
   // Dekodierung des aus der URL-Abfrage extrahierten Acces Tokens
-  const access_token = decodeURIComponent(
-    `${event.pathParameters.access_token}`
-  );
+  const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
   oAuth2Client.setCredentials({ access_token });
 
   return new Promise((resolve, reject) => {
