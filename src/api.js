@@ -47,11 +47,6 @@ export const getAccessToken = async () => {
       const response = await fetch(
         'https://jd7r7l6qek.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url'
       );
-      // Vergewissern Sie sich, dass Sie in dem soeben gezeigten Codeschnipsel
-      // Ihre tatsächliche Lambda-"getAuthURL" verwenden
-      // (z. B. diejenige, die mit "api/get-auth-url" endet
-      // ("https://---------/api/get-auth-url")).
-
       const result = await response.json();
       const { authUrl } = result;
       return (window.location.href = authUrl);
@@ -77,12 +72,6 @@ const getToken = async (code) => {
   const response = await fetch(
     'https://jd7r7l6qek.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + encodeCode
   );
-  // Stellen Sie sicher, dass Sie YOUR_GET_ACCESS_TOKEN_ENDPOINT
-  // durch die tatsächliche getAccessToken-URL (die mit "api/token") ersetzen.
-  // Die URL sollte mit "api/token" enden, da der Schrägstrich und der Code
-  // (in der encodeCode-Variable) an die URL angehängt werden.
-  // Zum Beispiel: "https://***************/api/token" + "/" + encodeCode;.
-
   const { access_token } = await response.json();
   access_token && localStorage.setItem('access_token', access_token);
 

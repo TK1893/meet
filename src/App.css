@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -82,11 +83,11 @@ input[type='number'] {
   position: relative;
   background-color: #bcdcdb;
 }
-.details {
-  margin: 20px 0 20px 0;
+.details-container {
+  margin: 30px 0 20px 0;
 }
 
-.toggle-details-btn {
+.details-btn {
   /* position: absolute;
   right: 5px;
   bottom: 5px; */
@@ -100,7 +101,9 @@ input[type='number'] {
   font-weight: 700;
   margin-top: 15px;
 }
-
+.created-text {
+  margin-top: 30px;
+}
 #number-of-events {
   display: flex;
   flex-direction: column;
