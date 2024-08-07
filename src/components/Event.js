@@ -5,18 +5,20 @@ const Event = ({ event }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div>
+    <div className="event">
       <li>
-        <h2>{event.summary}</h2>
-        <p>{event.start.dateTime}</p>
-        <p>{event.end.dateTime}</p>
-        <p>{event.location}</p>
-        <p>{event.created}</p>
+        <h2>{event && event.summary}</h2>
+        <p>{event && event.location}</p>
+        <p>{event && new Date(event.start.dateTime).toUTCString()}</p>
       </li>
       {showDetails ? (
         <div className="details" id="details">
-          <h2>{event.summary}</h2>
+          <p className="details-heading">What can you expect?</p>
           <p>{event.description}</p>
+          <p className="details-heading">Event start</p>
+          <p>{event && new Date(event.start.dateTime).toUTCString()}</p>
+          <p className="details-heading">Event start</p>
+          <p>{event && new Date(event.end.dateTime).toUTCString()}</p>
         </div>
       ) : null}
       <button
