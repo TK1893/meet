@@ -8,7 +8,7 @@ const Event = ({ event }) => {
     <div className="event">
       <li>
         <h2>{event && event.summary}</h2>
-        <p>{event && event.location}</p>
+        <p className="details-heading">{event && event.location}</p>
         <p>{event && new Date(event.start.dateTime).toUTCString()}</p>
       </li>
       {showDetails ? (
