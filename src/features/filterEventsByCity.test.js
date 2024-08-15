@@ -5,8 +5,8 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import { getEvents } from '../api';
 
-const feature = loadFeature('./src/features/filterEventsByCity.feature');
 //FEATURE #01
+const feature = loadFeature('./src/features/filterEventsByCity.feature');
 defineFeature(feature, (test) => {
   //Szenario #01
   test('When user hasn’t searched for a city, show upcoming events from all cities.', ({ given, when, then }) => {
