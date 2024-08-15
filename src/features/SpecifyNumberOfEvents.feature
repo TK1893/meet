@@ -1,3 +1,4 @@
+# src/features/SpecifyNumberOfEvents.feature
 Feature: Specify Number of Events
 
   Scenario: When user hasn not specified a number, 32 events are shown by default.
