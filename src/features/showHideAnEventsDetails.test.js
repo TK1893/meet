@@ -4,7 +4,6 @@ import { render, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { getEvents } from '../api';
 import App from '../App';
-import EventList from '../components/EventList';
 import Event from '../components/Event';
 
 //FEATURE #02
