@@ -1,4 +1,4 @@
-// src\__tests__\EndToEnd.test.js
+// src/__tests__/EndToEnd.test.js
 import puppeteer from 'puppeteer';
 
 // Feature #01
