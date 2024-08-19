@@ -26,4 +26,4 @@ serviceWorkerRegistration.unregister();
 reportWebVitals();
 
 // Atatus Integration Check
-atatus.notify(new Error('Test Atatus Setup'));
+// atatus.notify(new Error('Test Atatus Setup'));
