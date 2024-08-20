@@ -1,6 +1,6 @@
 // src/api.js
 import mockData from './mock-data';
-import * as atatus from 'atatus-spa';
+// import * as atatus from 'atatus-spa';
 
 export const extractLocations = (events) => {
   const extractedLocations = events.map((event) => event.location);
@@ -14,57 +14,56 @@ const checkToken = async (accessToken) => {
   return result;
 };
 
-// // This function will fetch the list of all events
-// export const getEvents = async () => {
-//   if (window.location.href.startsWith('http://localhost')) {
-//     return mockData;
-//   }
-
-//   const token = await getAccessToken();
-
-//   if (token) {
-//     removeQuery();
-//     const url =
-//       'https://jd7r7l6qek.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/' + token;
-//     const response = await fetch(url);
-//     const result = await response.json();
-//     if (result) {
-//       return result.events;
-//     } else return null;
-//   }
-// };
-
 // This function will fetch the list of all events
 export const getEvents = async () => {
-  try {
-    if (window.location.href.startsWith('http://localhost')) {
-      return mockData;
-    }
+  if (window.location.href.startsWith('http://localhost')) {
+    return mockData;
+  }
 
-    const token = await getAccessToken();
+  const token = await getAccessToken();
 
-    if (token) {
-      removeQuery();
-      const url = 'https://jd7r7l6qek.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/' + token;
-      const response = await fetch(url);
-
-      if (!response.ok) {
-        throw new Error(`Fehler beim Abrufen der Events: ${response.statusText}`);
-      }
-
-      const result = await response.json();
-      if (result) {
-        return result.events;
-      } else {
-        throw new Error('Keine Events gefunden.');
-      }
-    }
-  } catch (error) {
-    console.error('Fehler beim Abrufen der Events:', error);
-    atatus.notify(error); // Optional: Fehler an Atatus melden
-    return null;
+  if (token) {
+    removeQuery();
+    const url = 'https://jd7r7l6qek.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/' + token;
+    const response = await fetch(url);
+    const result = await response.json();
+    if (result) {
+      return result.events;
+    } else return null;
   }
 };
+
+// // This function will fetch the list of all events
+// export const getEvents = async () => {
+//   try {
+//     if (window.location.href.startsWith('http://localhost')) {
+//       return mockData;
+//     }
+
+//     const token = await getAccessToken();
+
+//     if (token) {
+//       removeQuery();
+//       const url = 'https://jd7r7l6qek.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/' + token;
+//       const response = await fetch(url);
+
+//       if (!response.ok) {
+//         throw new Error(`Fehler beim Abrufen der Events: ${response.statusText}`);
+//       }
+
+//       const result = await response.json();
+//       if (result) {
+//         return result.events;
+//       } else {
+//         throw new Error('Keine Events gefunden.');
+//       }
+//     }
+//   } catch (error) {
+//     console.error('Fehler beim Abrufen der Events:', error);
+//     atatus.notify(error); // Optional: Fehler an Atatus melden
+//     return null;
+//   }
+// };
 
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
