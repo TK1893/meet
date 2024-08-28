@@ -19,10 +19,10 @@ const App = () => {
   const [warningAlertText, setWarningAlertText] = useState('');
 
   useEffect(() => {
-    if (navigator.onLine) {
-      setWarningAlertText('');
-    } else {
+    if (!navigator.onLine) {
       setWarningAlertText('You are now using Meet offline. Events data may be outdated.');
+    } else {
+      setWarningAlertText('');
     }
     fetchData();
   }, [currentCity, currentNOE]);
