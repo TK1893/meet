@@ -15,7 +15,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlertText }) => {
       errorText = 'Your Input must be greater than zero !';
       setCurrentNOE(32);
     } else if (value > 41) {
-      errorText = 'Your Input must be smaller than 40 !';
+      errorText = 'Your input exceeds the number of upcoming events. Currently we have 40 events registered !';
       setCurrentNOE(32);
     } else {
       errorText = '';
