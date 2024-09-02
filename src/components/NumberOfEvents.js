@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const NumberOfEvents = ({ setCurrentNOE, setErrorAlertText }) => {
+const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlertText }) => {
   const [number, setNumber] = useState(32);
 
   const handleInputChanged = (e) => {
@@ -19,6 +19,19 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlertText }) => {
     setCurrentNOE(value);
     setErrorAlertText(errorText);
   };
+
+  // const handleInputChanged = (e) => {
+  //   let value = e.target.value;
+  //   setNumber(value);
+  //   let errorText;
+  //   if (value === isNaN || value.length <= 0) {
+  //     errorText = 'Please enter a valid number';
+  //   } else {
+  //     errorText = '';
+  //   }
+  //   setCurrentNOE(value);
+  //   setErrorAlertText(errorText);
+  // };
 
   return (
     <div id="number-of-events">
@@ -37,7 +50,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlertText }) => {
 
 export default NumberOfEvents;
 
-NumberOfEvents.propTypes = {
-  setCurrentNOE: PropTypes.func.isRequired,
-  setErrorAlertText: PropTypes.func.isRequired,
-};
+// NumberOfEvents.propTypes = {
+//   setCurrentNOE: PropTypes.func.isRequired,
+//   setErrorAlertText: PropTypes.func.isRequired,
+// };
