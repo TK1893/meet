@@ -21,7 +21,7 @@ const EventGenresChart = ({ events }) => {
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
     const RADIAN = Math.PI / 180;
     // Einen kleineren Radius verwenden, um das Label innerhalb des Segments zu positionieren
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.7;
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
     return percent ? (
