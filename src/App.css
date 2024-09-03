@@ -124,3 +124,23 @@ input[type='number'] {
   width: 250px;
   z-index: 1000;
 }
+@media (min-width: 500px) {
+  .charts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
