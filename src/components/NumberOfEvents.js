@@ -35,12 +35,15 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlertText }) => {
 
   return (
     <div id="number-of-events">
-      <label htmlFor="number-of-events-input">Number of Events</label>
+      <label className="title-input" htmlFor="number-of-events-input">
+        Number of Events
+      </label>
       <input
         type="text"
         className="number"
         id="number-of-events-input"
         name="noe"
+        placeholder="Enter your desired number"
         value={number}
         onChange={handleInputChanged}
       />

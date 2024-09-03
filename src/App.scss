@@ -6,6 +6,7 @@
 }
 
 $pri-font: 'JapaneseFont', sans-serif;
+$sec-font: 'Roboto', sans-serif;
 $primary-color: #bcdcdb;
 // $secondary-color:
 // $teritary-color:
@@ -15,43 +16,76 @@ $col-3: #b5f8c3;
 $col-4: #ffc583;
 $col-5: #b687ff;
 
+.App {
+  text-align: center;
+  padding: 2% 5% 2% 6%;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.5rem;
+  font-family: $sec-font;
+}
+
+.App * {
+  box-sizing: border-box;
+}
+
 .title-wrapper {
   justify-self: center;
   align-self: center;
   text-align: center;
   background-color: $primary-color;
-  width: 30rem;
   font-family: $pri-font;
   color: black;
-  border: 10px solid black;
+  border: 7px solid black;
   border-radius: 10px;
+  margin-bottom: 1rem;
+
   h1 {
     margin: 0;
     font-size: 5rem;
   }
   h2 {
-    margin: 0;
-    font-size: 3rem;
+    margin: 0 0 0.5rem 0;
+    font-family: $sec-font;
+    font-size: 1.2rem;
   }
-  margin-bottom: 1.5rem;
+  @media (max-width: 1999px) {
+    width: 300px;
+    padding: 12px 30px;
+  }
+
+  @media (min-width: 2000px) {
+    width: 500px;
+    padding: 20px 50px;
+    h1 {
+      font-size: 10rem;
+    }
+    h2 {
+      margin: 0 0 0.5rem 0;
+      font-family: $sec-font;
+      font-size: 2rem;
+    }
+  }
 }
 
-.App {
-  text-align: center;
-  padding: 2% 5%;
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 1.5rem;
-}
 h2 {
-  font-family: $pri-font;
+  font-family: $sec-font;
 }
-.App * {
-  box-sizing: border-box;
-}
-
 p {
   margin: 5px 0;
+}
+.title-input {
+  background-color: $primary-color;
+  border: solid rgba(0, 0, 0, 0.1) 1px;
+  border-bottom: 0;
+  border-radius: 5px 5px 0px 0px;
+  margin-bottom: 0;
+  font-family: $sec-font;
+  padding: 2px;
+}
+input {
+  border-radius: 0 0 5px 5px;
+  margin: 0;
 }
 
 /* 
@@ -70,11 +104,12 @@ input[type='number'] {
   border-radius: 4px;
   outline: none;
   border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+
   font-size: 14px;
   line-height: 20px;
   align-self: center;
   height: 38px;
-  margin-bottom: 20px;
 }
 /* ******************************************************
 **  CitySearch  *****
@@ -95,7 +130,6 @@ input[type='number'] {
 #city-input-label {
   background-color: black;
   color: white;
-  margin-bottom: 10px;
 }
 .suggestions {
   width: 250px;
@@ -162,9 +196,14 @@ input[type='number'] {
 }
 #number-of-events > input {
   text-align: center;
+  margin-bottom: 1rem;
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 #number-of-events > label {
-  margin-bottom: 5px;
+  padding: 2px;
+  margin-bottom: 0;
 }
 /* 
  ** Alerts *************************************
@@ -180,51 +219,20 @@ input[type='number'] {
  ** Charts *********************************************
   */
 
-/* @media (min-width: 0) {
-  .charts-container {
-    padding: 0 5%;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-  }
-  .eGC-container {
-    margin-bottom: 2rem;
-  }
-}
-@media (min-width: 769px) {
-  .charts-container {
-    padding: 0 10%;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    align-items: end;
-    justify-content: center;
-    align-content: center;
-    gap: 2rem;
-  }
-  .eGC-container {
-    margin-bottom: 0;
-  }
-  .cEC-container {
-    margin-bottom: 0;
-  }
-} */
 .charts-container {
   display: grid;
-  grid-template-columns: 4fr 5fr;
-  gap: 1rem; /* Standard-Abstand zwischen den Charts */
 }
 
 @media (max-width: 768px) {
   .charts-container {
     grid-template-columns: 1fr; /* Nur eine Spalte bei schmaleren Bildschirmen */
-    gap: 2rem; /* Weniger Abstand zwischen den Charts */
+    gap: 1.5rem; /* Weniger Abstand zwischen den Charts */
   }
 }
 
 @media (min-width: 769px) {
   .charts-container {
+    grid-template-columns: 4fr 5fr;
     padding: 0 5%;
     gap: 0rem;
   }
