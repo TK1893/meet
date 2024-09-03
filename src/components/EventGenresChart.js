@@ -15,15 +15,16 @@ function EventGenresChart({ events }) {
 
   const getData = () => {
     const data = genres.map((genre) => {
-      const filteredEvents = events.filter((event) => event.summary.includes(genre));
+      const filteredEvents = events.filter((event) => event.summary.includes(genre)).length;
       return {
         name: genre,
-        value: filteredEvents.length,
+        value: filteredEvents,
       };
     });
     // console.log('data:', data);
     return data;
   };
+
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
@@ -31,7 +32,7 @@ function EventGenresChart({ events }) {
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
     return (
-      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      <text x={x} y={y} fill="black" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
         {`${(percent * 100).toFixed(0)}%`}
       </text>
     );
@@ -51,14 +52,7 @@ function EventGenresChart({ events }) {
   return (
     <ResponsiveContainer width="99%" height={400}>
       <PieChart>
-        <Pie
-          data={data}
-          dataKey="value"
-          fill="#8884d8"
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius={130}
-        >
+        <Pie data={data} dataKey="value" fill="#000" labelLine={false} label={renderCustomizedLabel} outerRadius={130}>
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
           ))}
