@@ -6,7 +6,7 @@ import { ResponsiveContainer, PieChart, Pie, Legend, Cell } from 'recharts';
 
 function EventGenresChart({ events }) {
   const [data, setData] = useState([]);
-  const genres = ['React', 'Node', 'JavaScript', 'Angular', 'jQuery'];
+  const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
   const colors = ['#ffb3ba', '#bae1ff', '#b5f8c3', '#ffc583', '#B687FF'];
 
   useEffect(() => {
