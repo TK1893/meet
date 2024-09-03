@@ -1,4 +1,40 @@
-/* @import url(https://fonts.googleapis.com/css?family=Roboto:500); */
+@font-face {
+  font-family: 'JapaneseFont';
+  src: url('./fonts/Japanese.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$pri-font: 'JapaneseFont', sans-serif;
+$primary-color: #bcdcdb;
+// $secondary-color:
+// $teritary-color:
+$col-1: #ffb3ba;
+$col-2: #bae1ff;
+$col-3: #b5f8c3;
+$col-4: #ffc583;
+$col-5: #b687ff;
+
+.title-wrapper {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  background-color: $primary-color;
+  width: 30rem;
+  font-family: $pri-font;
+  color: black;
+  border: 10px solid black;
+  border-radius: 10px;
+  h1 {
+    margin: 0;
+    font-size: 5rem;
+  }
+  h2 {
+    margin: 0;
+    font-size: 3rem;
+  }
+  margin-bottom: 1.5rem;
+}
 
 .App {
   text-align: center;
@@ -7,7 +43,9 @@
   grid-template-columns: 1fr;
   row-gap: 1.5rem;
 }
-
+h2 {
+  font-family: $pri-font;
+}
 .App * {
   box-sizing: border-box;
 }
@@ -142,7 +180,7 @@ input[type='number'] {
  ** Charts *********************************************
   */
 
-@media (min-width: 0) {
+/* @media (min-width: 0) {
   .charts-container {
     padding: 0 5%;
     display: grid;
@@ -157,15 +195,55 @@ input[type='number'] {
 }
 @media (min-width: 769px) {
   .charts-container {
-    padding: 0 15%;
+    padding: 0 10%;
     display: grid;
     grid-template-columns: 2fr 3fr;
-    align-items: center;
+    align-items: end;
     justify-content: center;
     align-content: center;
-    /* gap: 2rem; */
+    gap: 2rem;
   }
   .eGC-container {
     margin-bottom: 0;
   }
+  .cEC-container {
+    margin-bottom: 0;
+  }
+} */
+.charts-container {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  gap: 1rem; /* Standard-Abstand zwischen den Charts */
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr; /* Nur eine Spalte bei schmaleren Bildschirmen */
+    gap: 2rem; /* Weniger Abstand zwischen den Charts */
+  }
+}
+
+@media (min-width: 769px) {
+  .charts-container {
+    padding: 0 5%;
+    gap: 0rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .charts-container {
+    padding: 0 12%;
+    gap: 0rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .charts-container {
+    padding: 0 20%;
+    gap: 0rem;
+  }
+}
+.eGC-container,
+.cEC-container {
+  padding: 0;
 }
