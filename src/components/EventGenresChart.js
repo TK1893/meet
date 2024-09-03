@@ -32,7 +32,7 @@ const EventGenresChart = ({ events }) => {
   };
 
   return (
-    <ResponsiveContainer width="99%" height={400}>
+    <ResponsiveContainer className="eGC-container" width="99%" height={400}>
       <PieChart>
         <Pie
           data={data}
@@ -40,8 +40,8 @@ const EventGenresChart = ({ events }) => {
           fill="#8884d8"
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={130}
-          innerRadius={60} // Optional: Definiere einen inneren Radius, um das Kreisdiagramm wie einen Donut zu gestalten.
+          outerRadius="95%"
+          innerRadius="40%" // Optional: Definiere einen inneren Radius, um das Kreisdiagramm wie einen Donut zu gestalten.
         >
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
