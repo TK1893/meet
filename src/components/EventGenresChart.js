@@ -65,7 +65,6 @@
 
 // // EventGenresChart.propTypes = {};
 
-// export default EventGenresChart;
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Legend, Cell } from 'recharts';
@@ -78,7 +77,7 @@ function EventGenresChart({ events }) {
 
   useEffect(() => {
     setData(getData());
-  }, [events]); // Korrigiertes Dependency Array, um nur neu zu rendern, wenn sich events ändern
+  }, [`${events}`]); // Korrigiertes Dependency Array, um nur neu zu rendern, wenn sich events ändern
 
   const getData = () => {
     const data = genres.map((genre) => {
@@ -94,8 +93,8 @@ function EventGenresChart({ events }) {
   const RADIAN = Math.PI / 180;
 
   const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
-    // Berechnung des Radius, um einen Punkt innerhalb des Stücks zu finden
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    // Radius etwas größer machen, um die Labels weiter nach außen zu verschieben
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.75; // Von 0.5 auf 0.75 erhöht
     // Berechnung der Position des Labels
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
