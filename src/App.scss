@@ -8,37 +8,57 @@
 $pri-font: 'JapaneseFont', sans-serif;
 $sec-font: 'Roboto', sans-serif;
 $primary-color: #bcdcdb;
-// $secondary-color:
-// $teritary-color:
+$secondary-color: #cceeef;
+$tertiary-color: #96b0af;
 $col-1: #ffb3ba;
 $col-2: #bae1ff;
 $col-3: #b5f8c3;
 $col-4: #ffc583;
 $col-5: #b687ff;
 
+$help-border: 1px solid red;
+$help-border-2: 1px solid orange;
+
+// ** APP  ******************************************************
 .App {
-  text-align: center;
-  padding: 2% 5% 2% 6%;
+  * {
+    box-sizing: border-box;
+  }
+  border: $help-border;
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 1.5rem;
+  text-align: center;
+  padding: 2% 5% 2% 6%;
+
   font-family: $sec-font;
+
+  @media screen and (min-width: 0px) and (max-width: 575px) {
+    gap: 1.5rem;
+  }
+  @media screen and (min-width: 401px) and (max-width: 767px) {
+    gap: 1.5rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1999px) {
+    gap: 2rem;
+  }
+  @media (min-width: 2000px) {
+    gap: 3rem;
+  }
 }
 
-.App * {
-  box-sizing: border-box;
-}
-
+// ** LOGO  ******************************************************
 .title-wrapper {
   justify-self: center;
   align-self: center;
   text-align: center;
+  width: 300px;
+  padding: 12px 30px;
   background-color: $primary-color;
   font-family: $pri-font;
   color: black;
   border: 7px solid black;
   border-radius: 10px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 
   h1 {
     margin: 0;
@@ -49,162 +69,8 @@ $col-5: #b687ff;
     font-family: $sec-font;
     font-size: 1.2rem;
   }
-  @media (max-width: 1999px) {
-    width: 300px;
-    padding: 12px 30px;
-  }
-
-  @media (min-width: 2000px) {
-    width: 500px;
-    padding: 20px 50px;
-    h1 {
-      font-size: 10rem;
-    }
-    h2 {
-      margin: 0 0 0.5rem 0;
-      font-family: $sec-font;
-      font-size: 2rem;
-    }
-  }
 }
 
-h2 {
-  font-family: $sec-font;
-}
-p {
-  margin: 5px 0;
-}
-.title-input {
-  background-color: $primary-color;
-  border: solid rgba(0, 0, 0, 0.1) 1px;
-  border-bottom: 0;
-  border-radius: 5px 5px 0px 0px;
-  margin-bottom: 0;
-  font-family: $sec-font;
-  padding: 2px;
-}
-input {
-  border-radius: 0 0 5px 5px;
-  margin: 0;
-}
-
-/* 
- ** Event-Liste *************************************
-  */
-ul {
-  padding: 0;
-  list-style: none;
-}
-/* 
- ** Inputs *************************************
-  */
-input[type='text'],
-input[type='number'] {
-  padding: 8px 6px 8px 10px;
-  border-radius: 4px;
-  outline: none;
-  border: 1px solid #ccc;
-  border-radius: 0 0 5px 5px;
-
-  font-size: 14px;
-  line-height: 20px;
-  align-self: center;
-  height: 38px;
-}
-/* ******************************************************
-**  CitySearch  *****
-****************************************************** */
-/** Input (CitySearch) **** */
-.city {
-  width: 250px;
-  text-align: center;
-}
-/** Container-flex (CitySearch) **** */
-#city-search {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  position: relative;
-}
-/** Input-Label (CitySearch) **** */
-#city-input-label {
-  background-color: black;
-  color: white;
-}
-.suggestions {
-  width: 250px;
-  position: absolute;
-  top: 45px;
-  z-index: 2;
-  align-self: center;
-  margin: 0;
-  font-size: 14px;
-  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
-}
-
-.suggestions > li {
-  text-align: center;
-  padding: 8px 6px 8px 10px;
-  background-color: #eee;
-  cursor: default;
-}
-
-.suggestions > li:last-child {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.suggestions > li:hover {
-  background-color: #bcdcdb;
-}
-
-.event {
-  padding: 10px 10px 35px;
-  margin-bottom: 10px;
-  /* text-align: left; */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  position: relative;
-  background-color: #bcdcdb;
-}
-.details-container {
-  margin: 30px 0 20px 0;
-}
-
-.details-btn {
-  /* position: absolute;
-  right: 5px;
-  bottom: 5px; */
-  margin-top: 10px;
-  padding: 5px 8px;
-  border-radius: 4px;
-  outline: none;
-  cursor: pointer;
-}
-.details-heading {
-  font-weight: 700;
-  margin-top: 15px;
-}
-.created-text {
-  margin-top: 30px;
-}
-#number-of-events {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  position: relative;
-}
-#number-of-events > input {
-  text-align: center;
-  margin-bottom: 1rem;
-  @media (max-width: 768px) {
-    margin-bottom: 0;
-  }
-}
-#number-of-events > label {
-  padding: 2px;
-  margin-bottom: 0;
-}
 /* 
  ** Alerts *************************************
   */
@@ -218,40 +84,80 @@ input[type='number'] {
 /* 
  ** Charts *********************************************
   */
+// @media screen and (min-width: 0px) and (max-width: 400px) {
+//   gap: 1rem;
+// }
+// @media screen and (min-width: 401px) and (max-width: 768px) {
+//   gap: 1.5rem;
+// }
+// @media screen and (min-width: 769px) and (max-width: 1999px) {
+//   gap: 2rem;
+// }
+// @media (min-width: 2000px) {
+//   gap: 3rem;
+// }
 
 .charts-container {
   display: grid;
-}
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 5%;
 
-@media (max-width: 768px) {
-  .charts-container {
-    grid-template-columns: 1fr; /* Nur eine Spalte bei schmaleren Bildschirmen */
-    gap: 1.5rem; /* Weniger Abstand zwischen den Charts */
-  }
-}
-
-@media (min-width: 769px) {
-  .charts-container {
+  @media screen and (min-width: 768px) {
     grid-template-columns: 4fr 5fr;
+    gap: 1rem;
     padding: 0 5%;
-    gap: 0rem;
   }
-}
-
-@media (min-width: 1024px) {
-  .charts-container {
-    padding: 0 12%;
-    gap: 0rem;
+  @media screen and (min-width: 1200px) {
+    gap: 1rem;
+    padding: 0 10%;
   }
-}
-
-@media (min-width: 2000px) {
-  .charts-container {
+  @media screen and (min-width: 1400px) {
+    gap: 1rem;
     padding: 0 20%;
-    gap: 0rem;
   }
 }
-.eGC-container,
-.cEC-container {
+.recharts-pie {
   padding: 0;
+  margin: 0;
 }
+.eGC-container {
+  padding: 0; /* Entfernt Padding */
+  margin: 0; /* Entfernt Margin */
+  height: 100%; /* Stellt sicher, dass der Container die volle Höhe einnimmt */
+  display: flex;
+  align-items: center; /* Zentriert den Inhalt vertikal */
+  justify-content: center; /* Optional: Zentriert den Inhalt horizontal */
+}
+
+// @media screen and (min-width: 768px) {
+//   .charts-container {
+//     grid-template-columns: 4fr 5fr;
+//     padding: 0;
+//     gap: 1rem;
+//     padding: 0 7%;
+//   }
+// }
+
+// @media (min-width: 1024px) {
+//   .charts-container {
+//     grid-template-columns: 4fr 5fr;
+//     padding: 0 12%;
+//     gap: 1rem;
+//   }
+// }
+
+// @media (min-width: 2000px) {
+//   .charts-container {
+//     padding: 0 25%;
+//     gap: 0rem;
+//   }
+// }
+// @media (max-width: 400px) {
+//   .eGC-container,
+//   .cEC-container {
+//     // width: 99%;
+//     padding: 0 5%;
+//     margin: 0;
+//   }
+// }

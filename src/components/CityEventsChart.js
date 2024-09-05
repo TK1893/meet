@@ -20,7 +20,7 @@ const CityEventsChart = ({ allLocations, events }) => {
   };
 
   return (
-    <ResponsiveContainer className="cEC-container" width="99%" height={400}>
+    <ResponsiveContainer className="cEC-container" width="99%" height={300}>
       <ScatterChart
         margin={{
           top: 20,

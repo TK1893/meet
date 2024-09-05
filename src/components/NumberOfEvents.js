@@ -1,6 +1,7 @@
 // src/components/NumberOfEvents.js
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import './CS-NoE.scss';
 
 const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlertText }) => {
   const [number, setNumber] = useState(32);
