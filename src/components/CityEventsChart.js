@@ -1,7 +1,7 @@
 // src/components/CityEventsChart.js
-
 import { useState, useEffect } from 'react';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import './charts.scss';
 
 const CityEventsChart = ({ allLocations, events }) => {
   const [data, setData] = useState([]);

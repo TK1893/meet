@@ -16,10 +16,9 @@ $col-3: #b5f8c3;
 $col-4: #ffc583;
 $col-5: #b687ff;
 
-$help-border: 1px solid red;
-$help-border-2: 1px solid orange;
-
-// ** APP  ******************************************************
+// **********************************************
+//  APP CSS
+// **********************************************
 .App {
   * {
     box-sizing: border-box;
@@ -45,7 +44,7 @@ $help-border-2: 1px solid orange;
   }
 }
 
-// ** LOGO  ******************************************************
+// ** LOGO  ***************************
 .title-wrapper {
   justify-self: center;
   align-self: center;
@@ -80,83 +79,3 @@ $help-border-2: 1px solid orange;
   width: 250px;
   z-index: 1000;
 }
-/* 
- ** Charts *********************************************
-  */
-// @media screen and (min-width: 0px) and (max-width: 400px) {
-//   gap: 1rem;
-// }
-// @media screen and (min-width: 401px) and (max-width: 768px) {
-//   gap: 1.5rem;
-// }
-// @media screen and (min-width: 769px) and (max-width: 1999px) {
-//   gap: 2rem;
-// }
-// @media (min-width: 2000px) {
-//   gap: 3rem;
-// }
-
-.charts-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  padding: 0 5%;
-
-  @media screen and (min-width: 768px) {
-    grid-template-columns: 4fr 5fr;
-    gap: 1rem;
-    padding: 0 5%;
-  }
-  @media screen and (min-width: 1200px) {
-    gap: 1rem;
-    padding: 0 10%;
-  }
-  @media screen and (min-width: 1400px) {
-    gap: 1rem;
-    padding: 0 20%;
-  }
-}
-.recharts-pie {
-  padding: 0;
-  margin: 0;
-}
-.eGC-container {
-  padding: 0; /* Entfernt Padding */
-  margin: 0; /* Entfernt Margin */
-  height: 100%; /* Stellt sicher, dass der Container die volle Höhe einnimmt */
-  display: flex;
-  align-items: center; /* Zentriert den Inhalt vertikal */
-  justify-content: center; /* Optional: Zentriert den Inhalt horizontal */
-}
-
-// @media screen and (min-width: 768px) {
-//   .charts-container {
-//     grid-template-columns: 4fr 5fr;
-//     padding: 0;
-//     gap: 1rem;
-//     padding: 0 7%;
-//   }
-// }
-
-// @media (min-width: 1024px) {
-//   .charts-container {
-//     grid-template-columns: 4fr 5fr;
-//     padding: 0 12%;
-//     gap: 1rem;
-//   }
-// }
-
-// @media (min-width: 2000px) {
-//   .charts-container {
-//     padding: 0 25%;
-//     gap: 0rem;
-//   }
-// }
-// @media (max-width: 400px) {
-//   .eGC-container,
-//   .cEC-container {
-//     // width: 99%;
-//     padding: 0 5%;
-//     margin: 0;
-//   }
-// }

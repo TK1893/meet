@@ -1,0 +1,46 @@
+$pri-font: 'JapaneseFont', sans-serif;
+$sec-font: 'Roboto', sans-serif;
+$primary-color: #bcdcdb;
+$secondary-color: #cceeef;
+$tertiary-color: #96b0af;
+$col-1: #ffb3ba;
+$col-2: #bae1ff;
+$col-3: #b5f8c3;
+$col-4: #ffc583;
+$col-5: #b687ff;
+
+// **********************************************
+//  EventGenreCharts & CityEventsChart
+// **********************************************
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 5%;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 4fr 5fr;
+    gap: 1rem;
+    padding: 0 5%;
+  }
+  @media screen and (min-width: 1200px) {
+    gap: 1rem;
+    padding: 0 10%;
+  }
+  @media screen and (min-width: 1400px) {
+    gap: 1rem;
+    padding: 0 20%;
+  }
+}
+.recharts-pie {
+  padding: 0;
+  margin: 0;
+}
+.eGC-container {
+  padding: 0; /* Entfernt Padding */
+  margin: 0; /* Entfernt Margin */
+  height: 100%; /* Stellt sicher, dass der Container die volle Höhe einnimmt */
+  display: flex;
+  align-items: center; /* Zentriert den Inhalt vertikal */
+  justify-content: center; /* Optional: Zentriert den Inhalt horizontal */
+}
