@@ -1,6 +1,6 @@
 // src/components/CitySearch.js
 import { useState, useEffect } from 'react';
-import './CS-NoE.scss';
+import './user-inputs.scss';
 
 const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
   const [showSuggestions, setShowSuggestions] = useState(false);

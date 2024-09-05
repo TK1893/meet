@@ -1,0 +1,109 @@
+// src\components\user-inputs.scss
+$sec-font: 'Roboto', sans-serif;
+$primary-color: hsl(178, 31%, 80%);
+$secondary-color: #cceeef;
+$tertiary-color: #96b0af;
+$col-1: #ffb3ba;
+$col-2: #bae1ff;
+$col-3: #b5f8c3;
+$col-4: #ffc583;
+$col-5: #b687ff;
+
+// ***********************************************
+//  # CitySearch &  # NumberOfEvents - CSS
+// ***********************************************
+
+// Input-Labels *********************************
+.title-input {
+  font-family: $sec-font;
+  background-color: $primary-color;
+  border: solid $tertiary-color 1px;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 0;
+  padding: 4px 8px;
+  box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.6), inset -1px -1px 2px rgba(0, 0, 0, 0.1),
+    1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+// Input-Felder (gemeinsame Settings) ***********
+#number-of-events-input,
+#city-search-input {
+  width: 250px;
+  padding: 4px 8px;
+  font-family: $sec-font;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  border: solid $tertiary-color 1px;
+  border-radius: 0;
+  border-top: none;
+  margin: 0;
+  background-color: white;
+
+  box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.6), inset -1px -1px 3px rgba(0, 0, 0, 0.1),
+    1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtiler Schatten */
+
+  color: black; /* Normale Textfarbe */
+  transition: box-shadow 0.2s ease-in-out;
+
+  &::placeholder {
+    color: $tertiary-color;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 1px 1px 4px rgba(255, 255, 255, 0.7), inset -1px -1px 4px rgba(0, 0, 0, 0.2),
+      2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Input (CitySearch) ****************************
+// ** Container-flex Input (CitySearch) **
+#city-search {
+  font-family: $sec-font;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}
+
+// ** Suggestions-List **
+.suggestions {
+  font-family: $sec-font;
+  width: 250px;
+  position: absolute;
+  top: 45px;
+  z-index: 2;
+  align-self: center;
+  margin: 0;
+  font-size: 14px;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5); /* Leicht verstärkter Schatten */
+}
+
+.suggestions > li {
+  font-family: $sec-font;
+  text-align: center;
+  padding: 8px 6px 8px 10px;
+  background-color: #eee;
+  cursor: default;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+.suggestions > li:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+// ** Input (NumberOfEvents) ********************************
+// Input-Container (NumberOfEvents) ********
+#number-of-events {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}

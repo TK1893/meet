@@ -1,0 +1,59 @@
+// src\components\Alert.scss
+$sec-font: 'Roboto', sans-serif;
+$primary-color: #bcdcdb;
+$secondary-color: #cceeef;
+$tertiary-color: #96b0af;
+$col-1: #ffb3ba;
+$col-2: #bae1ff;
+$col-3: #b5f8c3;
+$col-4: #ffc583;
+$col-5: #b687ff;
+
+// **********************************************
+//  Alert - CSS
+// **********************************************
+// .alerts-container {
+//   position: fixed;
+//   top: 0px;
+//   left: 20px;
+//   width: 250px;
+//   z-index: 1000;
+// }
+
+// Allgemeine Alert Styles
+.alerts-container {
+  width: 250px;
+  justify-self: center;
+}
+.Alert {
+  width: auto;
+  border-width: 2px;
+  border-style: solid;
+  font-weight: bolder;
+  border-radius: 7px;
+  text-align: center;
+  font-size: 12px;
+  margin: 0.5rem 0;
+  padding: 4 8px;
+}
+
+// InfoAlert Styles
+.InfoAlert {
+  color: rgb(162, 0, 255);
+  background-color: rgba(162, 0, 255, 0.1);
+  border-color: rgb(162, 0, 255);
+}
+
+// ErrorAlert Styles
+.ErrorAlert {
+  color: rgb(255, 0, 125);
+  background-color: rgba(255, 0, 125, 0.1);
+  border-color: rgb(255, 0, 125);
+}
+
+// WarningAlert Styles
+.WarningAlert {
+  color: #cd0000;
+  background-color: rgba(205, 0, 0, 0.1);
+  border-color: #cd0000;
+}

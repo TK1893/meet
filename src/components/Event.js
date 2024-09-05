@@ -1,5 +1,6 @@
 // src/components/Event.js
 import React, { useState } from 'react';
+import './events.scss';
 
 const Event = ({ event }) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -11,11 +12,6 @@ const Event = ({ event }) => {
         <p className="event-start">{event && new Date(event.start.dateTime).toUTCString()}</p>
       </div>
       <li className="event">
-        {/* <div className="event-title-container">
-        <h2>{event && event.summary}</h2>
-        <h3>{event && event.location}</h3>
-        <p className="event-start">{event && new Date(event.start.dateTime).toUTCString()}</p>
-      </div> */}
         {showDetails ? (
           <div className="details-container">
             <p className="details-heading">What can you expect?</p>
@@ -25,7 +21,6 @@ const Event = ({ event }) => {
             <p className="details-heading">Event end</p>
             <p className="event-end">{event && new Date(event.end.dateTime).toUTCString()}</p>
             <p className="created-text">Event created @ {event && new Date(event.created).toUTCString()}</p>
-            {/* <p className="event-created">{event && new Date(event.created).toUTCString()}</p> */}
           </div>
         ) : null}
 

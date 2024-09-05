@@ -1,33 +1,16 @@
 // src/components/Alert.js
 import { Component } from 'react';
+import './Alert.scss';
 
 class Alert extends Component {
-  constructor(props) {
-    super(props);
-    this.color = null;
-    this.bgColor = null;
-  }
-
-  getStyle = () => {
-    return {
-      color: this.color,
-      backgroundColor: this.bgColor,
-      borderWidth: '2px',
-      borderStyle: 'solid',
-      fontWeight: 'bolder',
-      borderRadius: '7px',
-      borderColor: this.color,
-      textAlign: 'center',
-      fontSize: '12px',
-      margin: '10px 0',
-      padding: '10px',
-    };
+  getClassName = () => {
+    return `Alert ${this.props.type}`;
   };
 
   render() {
     return (
-      <div className="Alert">
-        <p style={this.getStyle()}>{this.props.text}</p>
+      <div className={this.getClassName()}>
+        <p>{this.props.text}</p>
       </div>
     );
   }
@@ -36,24 +19,21 @@ class Alert extends Component {
 class InfoAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'rgb(19, 120, 118)'; // blue
-    this.bgColor = 'rgb(188, 220, 219)'; // light blue
+    this.type = 'InfoAlert';
   }
 }
 
 class ErrorAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'rgb(255, 20, 26)'; // red
-    this.bgColor = 'rgb(255, 221, 222)'; // light red
+    this.type = 'ErrorAlert';
   }
 }
 
 class WarningAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'rgb(94, 26, 69)'; // red
-    this.bgColor = 'rgb(247, 136, 206)'; // light red
+    this.type = 'WarningAlert';
   }
 }
 

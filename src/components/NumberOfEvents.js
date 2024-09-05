@@ -1,7 +1,6 @@
 // src/components/NumberOfEvents.js
 import { useState } from 'react';
-import PropTypes from 'prop-types';
-import './CS-NoE.scss';
+import './user-inputs.scss';
 
 const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlertText }) => {
   const [number, setNumber] = useState(32);
@@ -20,19 +19,6 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlertText }) => {
     setCurrentNOE(value);
     setErrorAlertText(errorText);
   };
-
-  // const handleInputChanged = (e) => {
-  //   let value = e.target.value;
-  //   setNumber(value);
-  //   let errorText;
-  //   if (value === isNaN || value.length <= 0) {
-  //     errorText = 'Please enter a valid number';
-  //   } else {
-  //     errorText = '';
-  //   }
-  //   setCurrentNOE(value);
-  //   setErrorAlertText(errorText);
-  // };
 
   return (
     <div id="number-of-events">
@@ -53,8 +39,3 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlertText }) => {
 };
 
 export default NumberOfEvents;
-
-// NumberOfEvents.propTypes = {
-//   setCurrentNOE: PropTypes.func.isRequired,
-//   setErrorAlertText: PropTypes.func.isRequired,
-// };

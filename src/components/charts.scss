@@ -1,4 +1,4 @@
-$pri-font: 'JapaneseFont', sans-serif;
+// src\components\charts.scss
 $sec-font: 'Roboto', sans-serif;
 $primary-color: #bcdcdb;
 $secondary-color: #cceeef;
@@ -9,9 +9,9 @@ $col-3: #b5f8c3;
 $col-4: #ffc583;
 $col-5: #b687ff;
 
-// **********************************************
-//  EventGenreCharts & CityEventsChart
-// **********************************************
+// ***********************************************
+//  # EventGenreCharts &  # CityEventsChart - CSS
+// ***********************************************
 .charts-container {
   display: grid;
   grid-template-columns: 1fr;
