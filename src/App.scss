@@ -50,7 +50,7 @@ $col-5: #b687ff;
   justify-self: center;
   align-self: center;
   text-align: center;
-  width: 250px;
+  width: 300px;
   padding: 12px 30px;
   background-color: $primary-color; /* Ursprüngliche Hintergrundfarbe */
   font-family: $pri-font;
@@ -67,7 +67,7 @@ $col-5: #b687ff;
 
   h1 {
     margin: 0;
-    font-size: 4rem;
+    font-size: 5rem;
     color: black; /* Beibehaltung des schwarzen Textes */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* 3D-Effekt für den Text */
   }
@@ -75,45 +75,8 @@ $col-5: #b687ff;
   h2 {
     margin: 0 0 0.5rem 0;
     font-family: $sec-font;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: black; /* Beibehaltung des schwarzen Textes */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* 3D-Effekt für Tiefe */
-  }
-}
-
-@media screen and (min-width: 575px) {
-  .title-wrapper {
-    justify-self: center;
-    align-self: center;
-    text-align: center;
-    width: 300px;
-    padding: 12px 30px;
-    background-color: $primary-color; /* Ursprüngliche Hintergrundfarbe */
-    font-family: $pri-font;
-    color: black;
-    border: 7px solid black; /* Beibehaltung des schwarzen Rahmens */
-    border-radius: 15px;
-    margin: 0;
-    margin-bottom: 1rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5), inset 3px 3px 8px rgba(255, 255, 255, 0.6),
-      inset -3px -3px 8px rgba(0, 0, 0, 0.3); /* Tiefer Schatten für den 3D-Effekt */
-
-    position: relative;
-    overflow: hidden;
-
-    h1 {
-      margin: 0;
-      font-size: 5rem;
-      color: black; /* Beibehaltung des schwarzen Textes */
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* 3D-Effekt für den Text */
-    }
-
-    h2 {
-      margin: 0 0 0.5rem 0;
-      font-family: $sec-font;
-      font-size: 1.5rem;
-      color: black; /* Beibehaltung des schwarzen Textes */
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* 3D-Effekt für Tiefe */
-    }
   }
 }
