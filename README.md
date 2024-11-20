@@ -8,13 +8,23 @@ The app is fully functional offline, can be installed on mobile and desktop devi
 
 ## Features
 
-- **`Event Filtering by City`**
-  - Users can filter events by a specified city and view upcoming events.
-- **`Event Details`**: Toggle visibility of event details with the ability to expand or collapse the information.
-- **`Number of Events`**: Configure how many events should be displayed per search.
-- **`Offline Usage`**: The app can function without an internet connection, showing cached data.
-- **`Home Screen Shortcut`**: Users can add the app to their home screen for quick access.
-- **`Data Visualization`**: Displays a scatterplot to visualize the number of events in different cities and a pie chart for event genre popularity.
+- **`Event Filtering by City`**  
+  Users can filter events by a specified city and view upcoming events.
+
+- **`Event Details`**:  
+  Toggle visibility of event details with the ability to expand or collapse the information.
+
+- **`Number of Events`**  
+   Configure how many events should be displayed per search.
+
+- **`Offline Usage`**:  
+   The app can function without an internet connection, showing cached data.
+
+- **`Home Screen Shortcut`**:  
+   Users can add the app to their home screen for quick access.
+
+- **`Data Visualization`**:  
+  Displays a scatterplot to visualize the number of events in different cities and a pie chart for event genre popularity.
 
 # App Features & Scenarios
 
