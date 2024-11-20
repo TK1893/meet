@@ -10,11 +10,12 @@ The app is fully functional offline, can be installed on mobile and desktop devi
 
 <!-- - **`Event Filtering by City`**   -->
 
-- **Event Filtering by City**  
-  Users can filter events by a specified city and view upcoming events.
+**Event Filtering by City**
 
-- **`Event Details`**:  
-  Toggle visibility of event details with the ability to expand or collapse the information.
+- Users can filter events by a specified city and view upcoming events.
+
+**Event Details**  
+ Toggle visibility of event details with the ability to expand or collapse the information.
 
 - **`Number of Events`**  
    Configure how many events should be displayed per search.
