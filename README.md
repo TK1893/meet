@@ -1,6 +1,20 @@
-# Meet App
+# Meet App - PWA with Serverless Backend
 
-Meet App is a serverless, progressive web application (PWA) built with React using a Test-Driven Development (TDD) approach. The app uses the Google Calendar API to fetch upcoming events.
+## Overview
+
+The **Meet App** is a Progressive Web Application (PWA) designed to fetch upcoming events using the Google Calendar API. This app allows users to filter events by city, display event details, and visualize data through interactive charts. The app is built using **React** with a **Test-Driven Development (TDD)** approach and a **serverless architecture** powered by **AWS Lambda**.
+
+The app is fully functional offline, can be installed on mobile and desktop devices, and includes data visualizations like scatter plots and pie charts. The app is responsive, cross-platform, and optimized for performance.
+
+## Features
+
+- **`Event Filtering by City`**
+  - Users can filter events by a specified city and view upcoming events.
+- **`Event Details`**: Toggle visibility of event details with the ability to expand or collapse the information.
+- **`Number of Events`**: Configure how many events should be displayed per search.
+- **`Offline Usage`**: The app can function without an internet connection, showing cached data.
+- **`Home Screen Shortcut`**: Users can add the app to their home screen for quick access.
+- **`Data Visualization`**: Displays a scatterplot to visualize the number of events in different cities and a pie chart for event genre popularity.
 
 # App Features & Scenarios
 
