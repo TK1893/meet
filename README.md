@@ -20,7 +20,7 @@ The app is fully functional offline, can be installed on mobile and desktop devi
 - **Number of Events**  
    Configure how many events should be displayed per search.
 
-- **`Offline Usage`**:  
+- **Offline Usage**:  
    The app can function without an internet connection, showing cached data.
 
 - **`Home Screen Shortcut`**:  
