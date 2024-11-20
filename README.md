@@ -8,7 +8,9 @@ The app is fully functional offline, can be installed on mobile and desktop devi
 
 ## Features
 
-- **`Event Filtering by City`**  
+<!-- - **`Event Filtering by City`**   -->
+
+- **Event Filtering by City**  
   Users can filter events by a specified city and view upcoming events.
 
 - **`Event Details`**:  
