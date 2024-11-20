@@ -1,12 +1,33 @@
 # Meet App - PWA with Serverless Backend
 
-## Overview
-
 The **Meet App** is a Progressive Web Application (PWA) designed to fetch upcoming events using the Google Calendar API. This app allows users to filter events by city, display event details, and visualize data through interactive charts. The app is built using **React** with a **Test-Driven Development (TDD)** approach and a **serverless architecture** powered by **AWS Lambda**.
 
 The app is fully functional offline, can be installed on mobile and desktop devices, and includes data visualizations like scatter plots and pie charts. The app is responsive, cross-platform, and optimized for performance.
 
-## Features
+## Live App
+
+[**Check the Meet Live App**](https://tk1893.github.io/meet/)
+
+---
+
+## Table of Contents
+
+- [Key Features](#key-features)
+- [User Stories & Scenarios](#user-stories--scenarios)
+- [Technologies Used](#technologies-used)
+- [Deliverables](#deliverables)
+- [App Components](#app-components)
+- [File Details](#file-details)
+- [Installation & Setup](#installation--setup)
+
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
+
+---
+
+## Key Features
 
 <!-- - **`Event Filtering by City`**   -->
 
@@ -33,6 +54,8 @@ Users can add the app to their home screen for quick access.
 ### **`Data Visualization`**
 
 Displays a scatterplot to visualize the number of events in different cities and a pie chart for event genre popularity.
+
+---
 
 ## User Stories & Scenarios
 
@@ -150,29 +173,40 @@ So that I can easily visualize and compare the event distribution across differe
 - **When** the user navigates to the charts section;
 - **Then** a chart will be displayed with the number of upcoming events in the selected city.
 
+---
+
 ## Technologies Used
 
 ### Frontend
 
-- **`React`** - JavaScript library for building the user interface.
+- **`React`**  
+  JavaScript library for building the user interface.
 
-- **`Chart.js`** - For rendering interactive charts (scatter plot and pie chart).
+- **`Chart.js`**  
+  For rendering interactive charts (scatter plot and pie chart).
 
-- **`Service Worker`** - For offline functionality and caching resources.
+- **`Service Worker`**  
+   For offline functionality and caching resources.
 
-- **`React Bootstrap`** - For responsive and consistent design components.
+- **`React Bootstrap`**  
+   For responsive and consistent design components.
 
-- **`OAuth2 Authentication`** - For secure authorization to the Google Calendar API.
+- **`OAuth2 Authentication`**  
+   For secure authorization to the Google Calendar API.
 
-<!-- - **`Axios`**: For making HTTP requests to the Google Calendar API and other serverless functions. -->
+<!-- - **`Axios`**
+  For making HTTP requests to the Google Calendar API and other serverless functions. -->
 
 ### Backend
 
-- **`AWS Lambda`** - Serverless computing service used for authentication and other backend functions.
+- **`AWS Lambda`**  
+   Serverless computing service used for authentication and other backend functions.
 
-- **`AWS API Gateway`** - For managing API requests and routing.
+- **`AWS API Gateway`**  
+   For managing API requests and routing.
 
-- **`Serverless Framework`** - For deploying the serverless functions to AWS.
+- **`Serverless Framework`**  
+   For deploying the serverless functions to AWS.
 
 - **`Google Calendar API`**
 
@@ -187,16 +221,43 @@ So that I can easily visualize and compare the event distribution across differe
 
 ### Additional Tools
 
-- **`GitHub Pages`**: For hosting the frontend app.
+- **`GitHub Pages`** - For hosting the frontend app.
 
-- **`Lighthouse`**: For performance auditing and ensuring the app meets PWA requirements.
+- **`Lighthouse`** - For performance auditing and ensuring the app meets PWA requirements.
 
-- **`Continuous Integration (CI)`**: For automated testing and deployments.
+- **`Continuous Integration (CI)`** - For automated testing and deployments.
 
-- **PWA Checklist**: Passes the Lighthouse PWA criteria
+<!-- OLD -->
+<!-- - **PWA Checklist**: Passes the Lighthouse PWA criteria
 - **Data Visualization**: Implementation of charts
 - **Test Coverage**: At least 90% test coverage
-- **Monitoring**: Integration of a performance monitoring tool
+- **Monitoring**: Integration of a performance monitoring tool -->
+
+---
+
+### **Languages & Frameworks:**
+
+- **`JavaScript`**
+
+- **`React (including Hooks)`**
+
+### **Libraries**
+
+- **`Recharts`** - For rendering scatter and pie charts
+
+### **CSS Preprocessor**
+
+- **`Sass (SCSS)`** - For styling components
+
+### **Packages**
+
+- `react-responsive-container` - Ensures responsive chart behavior
+
+### **API**
+
+- **`Google Calendar API`**: Used to fetch event data
+
+---
 
 ## Deliverables
 
@@ -221,6 +282,143 @@ So that I can easily visualize and compare the event distribution across differe
 - **`Data Visualization`**: Implementation of data visualization features
 
 - **`End-to-End testing`** with Puppeteer
+
+## App Components
+
+### **`1. Alert.js`**
+
+- Provides alert messages to the user.
+
+- **Base Component :** `Alert`
+
+  - Displays an alert with a type (e.g., Info, Error, Warning).
+
+- **Subcomponents:**
+  - `InfoAlert ` - Displays informational messages.
+  - `ErrorAlert` - Displays error messages.
+  - `WarningAlert` - Displays warnings.
+
+### **`2. CityEventsChart.js`**
+
+- Displays a scatter chart visualizing the number of events per city.
+
+- Uses `recharts` to render a responsive scatter chart.
+- Automatically updates when the `events` prop changes.
+- **`Props`**
+
+- `allLocations` - List of all cities.
+- `events` - Array of event objects.
+
+### **`3. CitySearch.js`**
+
+- Enables users to search for events in specific cities.
+
+- **`Features`**
+
+  - Dynamic filtering of suggestions based on user input.
+  - Displays suggestions in a dropdown list.
+  - Alerts users when no matching city is found.
+
+- **`Props`**
+
+  - `allLocations` - List of all available cities.
+  - `setCurrentCity` - Updates the selected city.
+  - `setInfoAlert` - Displays an info alert for invalid inputs.
+
+### **`4. Event.js`**
+
+- Displays individual event details.
+
+- Toggles between a brief summary and full details, including start/end times, description, and creation date.
+
+- **`Props`**
+
+  - `event` - The event object containing its details.
+
+### **`5. EventGenresChart.js`**
+
+- Visualizes the distribution of event genres using a pie chart.
+- Genres tracked: `React`, `JavaScript`, `Node`, `jQuery`, and `Angular`.
+- Utilizes `recharts` for a responsive chart and `Cell` components to style slices with unique colors.
+
+- **`Props`**
+  - `events` - Array of event objects.
+
+### **`6. EventList.js`**
+
+- Renders a list of events.
+- Iterates over the `events` array and uses the `Event` component to display each event.
+
+### **`7. NumberOfEvents.js`**
+
+- Allows users to specify how many events to display.
+
+- Validates user input to ensure it is a positive number.
+- Props:
+  - `currentNOE` - Current number of events to display.
+  - `setCurrentNOE` - Updates the number of events.
+  - `setErrorAlertText` - Displays an error alert for invalid inputs.
+
+---
+
+## File Details
+
+### **`auth-server/handler.js`**
+
+This file contains the handler functions for the auth server, which is deployed using AWS Lambda and the Serverless Framework API. It provides functions to exchange OAuth2 authentication codes for access tokens and fetch calendar events from Google Calendar.
+
+- #### Key Functions :
+
+  - `getAuthURL` - Returns the URL that the user needs to visit to authenticate with Google Calendar.
+
+  - `getAccessToken` - Exchanges an authentication code for an access token.
+  - `getCalendarEvents` - Fetches calendar events from Google Calendar.
+
+### `auth-server/serverless.yml`
+
+Configuration file for the Serverless Framework. It defines the AWS Lambda provider settings, functions, and environment variables used by the auth server.  
+The Serverless Framework helps deploy the Lambda functions and manage the API endpoints.
+
+- #### **Important configurations :**
+  - Lambda provider on AWS with Node.js 20.x
+- #### **Defined functions :**
+  - `getAuthURL`
+  - `getAccessToken`
+  - `getCalendarEvents`
+- #### Environment variables:
+  - `CLIENT_ID`
+  - `CLIENT_SECRET`
+  - `CALENDAR_ID`
+
+### `api.js`
+
+Provides functions to retrieve events and extract cities from event data. It also handles the API request to fetch authentication tokens and events from the backend.
+
+#### **Functions :**
+
+- `extractLocations`: Extracts and cleans up the locations from events.
+- `getAccessToken`: Retrieves the access token for API access.
+- `getEvents`: Fetches events from the API and processes them.
+
+### `index.js`
+
+The main entry point of the application. It manages the user interface (UI), listens for user interactions, and interacts with the backend to retrieve and display events.
+
+#### **Functions :**
+
+- `handleSearch`: Handles user search input and triggers the event retrieval process.
+- `handleCalendarEvent`: Displays events from the Google Calendar.
+- `handleError`: Displays error messages if any issue occurs during API calls.
+
+### `serverless.yml`
+
+A serverless configuration file that defines the serverless functions and resources. It is used for deploying the entire application, including the auth server and event fetching functions.
+
+#### **Key Sections** :
+
+- `functions` - Defines the Lambda functions to be deployed.
+
+- `resources` - Specifies any additional resources needed for the application, such as DynamoDB tables or API Gateway settings.
 
 ## Installation & Setup
 
@@ -296,3 +494,25 @@ To authenticate users with Google Calendar API:
 3. Configure **OAuth2 credentials** and add the redirect URIs for your app.
 
 4. Update the `config.json` file with your client ID and client secret.
+
+---
+
+## Contributing
+
+Contributions are welcome! To contribute:
+Fork the repository.
+Create a new branch (feature/NewFeature).
+Make your changes and ensure they are well-documented.
+Submit a pull request for review.
+
+---
+
+## License
+
+This project is open-source under the MIT License.
+
+---
+
+## Author
+
+Developed by [Tobias Kraft](https://tk1893.github.io/tk-portfolio/).

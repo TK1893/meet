@@ -1,3 +1,4 @@
+# auth-server\serverless.yml
 # "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: tobiaskraft
 # "app" enables Serverless Framework Dashboard features and sharing them with other Services.

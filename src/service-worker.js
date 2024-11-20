@@ -1,3 +1,4 @@
+// src\service-worker.js
 /* eslint-disable no-restricted-globals */
 
 // This service worker can be customized!
