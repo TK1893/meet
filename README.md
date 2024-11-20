@@ -17,7 +17,7 @@ The app is fully functional offline, can be installed on mobile and desktop devi
 **Event Details**  
  Toggle visibility of event details with the ability to expand or collapse the information.
 
-- **`Number of Events`**  
+- **Number of Events**  
    Configure how many events should be displayed per search.
 
 - **`Offline Usage`**:  
