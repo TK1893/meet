@@ -12,18 +12,43 @@ The app is fully functional offline, can be installed on mobile and desktop devi
 
 ## Table of Contents
 
+- [Deliverables](#deliverables)
 - [Key Features](#key-features)
 - [User Stories & Scenarios](#user-stories--scenarios)
 - [Technologies Used](#technologies-used)
-- [Deliverables](#deliverables)
 - [App Components](#app-components)
-- [File Details](#file-details)
+- [App Files](#app-files)
 - [Installation & Setup](#installation--setup)
-
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 - [Author](#author)
+
+---
+
+## Deliverables
+
+- **`TDD & Test Scenarios`** Creation of user stories and test scenarios
+
+- **`Serverless Functions & Authentication`** Connecting the app with a protected API and implementing OAuth
+
+- **`AWS Lambda Functions`** Writing and testing Lambda functions
+
+- **`Unit Testing`** Writing and testing unit tests
+
+- **`Integration Testing`** Writing and testing integration tests
+
+- **`User Acceptance Testing & End-to-End Testing`** Writing and conducting acceptance and end-to-end tests
+
+- **`Continuous Delivery`** Integration of CI/CD practices and APM tools
+
+- **`Object-Oriented Programming (OOP)`** Implementation of OOP concepts
+
+- **`Progressive Web App`** Implementation of PWA functionalities
+
+- **`Data Visualization`**: Implementation of data visualization features
+
+- **`End-to-End testing`** with Puppeteer
 
 ---
 
@@ -179,44 +204,54 @@ So that I can easily visualize and compare the event distribution across differe
 
 ### Frontend
 
-- **`React`**  
-  JavaScript library for building the user interface.
+- **`React`** JavaScript library for building the user interface.
 
-- **`Chart.js`**  
-  For rendering interactive charts (scatter plot and pie chart).
+- **`React Hooks`** Used for managing state and lifecycle in functional components (e.g., `useState`, `useEffect`).
 
-- **`Service Worker`**  
-   For offline functionality and caching resources.
+- **`Sass (SCSS)`** CSS preprocessor used for styling the app, including the component-specific styles
 
-- **`React Bootstrap`**  
-   For responsive and consistent design components.
+- **`Recharts`** A charting library for React, used to create responsive and customizable data visualizations such as bar charts, line charts, and pie charts.
 
-- **`OAuth2 Authentication`**  
-   For secure authorization to the Google Calendar API.
+- **`web-vitals`** Library for measuring web performance metrics.
 
-<!-- - **`Axios`**
-  For making HTTP requests to the Google Calendar API and other serverless functions. -->
+- **`React Bootstrap`** For responsive and consistent design components.
 
-### Backend
+- **`Atatus`** Error tracking service integrated for logging frontend errors.
 
-- **`AWS Lambda`**  
-   Serverless computing service used for authentication and other backend functions.
+- **`NProgress`** Library for showing progress bars during asynchronous operations like API calls.
 
-- **`AWS API Gateway`**  
-   For managing API requests and routing.
+- **`Service Worker`** Provides offline support and caching functionality, improving app load time and enabling offline use.
 
-- **`Serverless Framework`**  
-   For deploying the serverless functions to AWS.
+- **`Workbox`** A set of libraries used for service worker caching and offline functionality.
 
-- **`Google Calendar API`**
+- **`fetch API`** Used to make network requests to the API endpoints.
+- **`URLSearchParams`**: For parsing query parameters in URLs.
+- **`localStorage`**: Used to store tokens and event data on the client side.
+
+### API & Server-side(Auth Server)
+
+- **`AWS Lambda`** Serverless computing service that handles the authentication and other backend logic (using **Serverless Framework**).
+
+- **`Serverless Framework`** For configuring & deploying the serverless functions to AWS.
+
+- **`Google Calendar API`** Provides access to Google services like Google Calendar. Specifically, the `google.calendar` module is used to fetch calendar events.
+
+- **`OAuth2`** For authentication via Google’s OAuth2 flow to get access to calendar events.
+
+- **`Node.js`** JavaScript runtime used on the server-side.
 
 ### Development & Testing
 
-- **`TDD`** - Development using Test-Driven Development
+- **`TDD`** Development using Test-Driven Development
 
-- **`Jest`** - For unit and integration testing.
+- **`Jest`** For unit and integration testing.
 
-- **`React Testing Library`** - For testing React components.
+- **`React Testing Library`** For testing React components with a focus on user interactions.
+
+- **`Jest-Cucumber`** For BDD tests based on Gherkin scenarios.
+
+- **`Puppeteer`** For end-to-end testing with a headless Chrome browser.
+
 <!-- - **`Supertest`**: For API testing (testing the serverless functions). -->
 
 ### Additional Tools
@@ -227,61 +262,7 @@ So that I can easily visualize and compare the event distribution across differe
 
 - **`Continuous Integration (CI)`** - For automated testing and deployments.
 
-<!-- OLD -->
-<!-- - **PWA Checklist**: Passes the Lighthouse PWA criteria
-- **Data Visualization**: Implementation of charts
-- **Test Coverage**: At least 90% test coverage
-- **Monitoring**: Integration of a performance monitoring tool -->
-
 ---
-
-### **Languages & Frameworks:**
-
-- **`JavaScript`**
-
-- **`React (including Hooks)`**
-
-### **Libraries**
-
-- **`Recharts`** - For rendering scatter and pie charts
-
-### **CSS Preprocessor**
-
-- **`Sass (SCSS)`** - For styling components
-
-### **Packages**
-
-- `react-responsive-container` - Ensures responsive chart behavior
-
-### **API**
-
-- **`Google Calendar API`**: Used to fetch event data
-
----
-
-## Deliverables
-
-- **`TDD & Test Scenarios`** - Creation of user stories and test scenarios
-
-- **`Serverless Functions & Authentication`** - Connecting the app with a protected API and implementing OAuth
-
-- **`AWS Lambda Functions`** - Writing and testing Lambda functions
-
-- **`Unit Testing`** - Writing and testing unit tests
-
-- **`Integration Testing`** - Writing and testing integration tests
-
-- **`User Acceptance Testing & End-to-End Testing`** - Writing and conducting acceptance and end-to-end tests
-
-- **`Continuous Delivery`**: Integration of CI/CD practices and APM tools
-
-- **`Object-Oriented Programming (OOP)`**: Implementation of OOP concepts
-
-- **`Progressive Web Apps`**: Implementation of PWA functionalities
-
-- **`Data Visualization`**: Implementation of data visualization features
-
-- **`End-to-End testing`** with Puppeteer
 
 ## App Components
 
@@ -361,64 +342,78 @@ So that I can easily visualize and compare the event distribution across differe
 
 ---
 
-## File Details
+## App Files
 
-### **`auth-server/handler.js`**
+Here’s a breakdown of each file and its role in the Meet app:
 
-This file contains the handler functions for the auth server, which is deployed using AWS Lambda and the Serverless Framework API. It provides functions to exchange OAuth2 authentication codes for access tokens and fetch calendar events from Google Calendar.
+### 1. **`auth-server / handler.js`**
 
-- #### Key Functions :
+- Contains AWS Lambda functions that handle authentication with the Google Calendar API.
+- Defines three **main functions**:
 
   - `getAuthURL` - Returns the URL that the user needs to visit to authenticate with Google Calendar.
 
   - `getAccessToken` - Exchanges an authentication code for an access token.
   - `getCalendarEvents` - Fetches calendar events from Google Calendar.
 
-### `auth-server/serverless.yml`
+### 2. `auth-server / serverless.yml`
 
-Configuration file for the Serverless Framework. It defines the AWS Lambda provider settings, functions, and environment variables used by the auth server.  
-The Serverless Framework helps deploy the Lambda functions and manage the API endpoints.
+- Configuration file for the Serverless Framework. It defines the AWS provider settings, Lambda functions, and their respective endpoints.
 
-- #### **Important configurations :**
-  - Lambda provider on AWS with Node.js 20.x
-- #### **Defined functions :**
-  - `getAuthURL`
-  - `getAccessToken`
-  - `getCalendarEvents`
-- #### Environment variables:
-  - `CLIENT_ID`
-  - `CLIENT_SECRET`
-  - `CALENDAR_ID`
+- Specifies environment variables like `CLIENT_ID`, `CLIENT_SECRET`, and `CALENDAR_ID` for API access.
 
-### `api.js`
+### 3. `api.js`
 
-Provides functions to retrieve events and extract cities from event data. It also handles the API request to fetch authentication tokens and events from the backend.
+Contains the logic for fetching events and managing tokens.
 
 #### **Functions :**
 
-- `extractLocations`: Extracts and cleans up the locations from events.
-- `getAccessToken`: Retrieves the access token for API access.
-- `getEvents`: Fetches events from the API and processes them.
+- `extractLocations` - Extracts unique locations from event data.
 
-### `index.js`
+- `getAccessToken` - Manages access token retrieval and validation.
 
-The main entry point of the application. It manages the user interface (UI), listens for user interactions, and interacts with the backend to retrieve and display events.
+- `getEvents` - Fetches events from an API or mock data, depending on the network status.
+
+### 4. `App.js`
+
+- The main component that renders the Meet app’s user interface.
+
+- Uses several child components such as `CitySearch`, `CityEventsChart`, and `EventList` to display the app’s content.
+- Manages state for events, locations, and alerts using React hooks like `useState` and `useEffect`.
+
+### 5. `index.js`
+
+- The entry point for the React app.
+
+- Renders the `App` component and registers the service worker for offline capabilities and faster load times.
+- Integrates **`Atatus`** for error tracking.
 
 #### **Functions :**
 
-- `handleSearch`: Handles user search input and triggers the event retrieval process.
-- `handleCalendarEvent`: Displays events from the Google Calendar.
-- `handleError`: Displays error messages if any issue occurs during API calls.
+- `handleSearch` - Handles user search input and triggers the event retrieval process.
 
-### `serverless.yml`
+- `handleCalendarEvent` - Displays events from the Google Calendar.
 
-A serverless configuration file that defines the serverless functions and resources. It is used for deploying the entire application, including the auth server and event fetching functions.
+- `handleError` - Displays error messages if any issue occurs during API calls.
 
-#### **Key Sections** :
+### 6. `mock-data.js`
 
-- `functions` - Defines the Lambda functions to be deployed.
+- Contains mock data used for simulating events when the app is offline or running locally.
 
-- `resources` - Specifies any additional resources needed for the application, such as DynamoDB tables or API Gateway settings.
+### 7. `reportWebVitals`
+
+- Imports and uses **web-vitals** to measure and report the app’s performance metrics like FCP, LCP, CLS, etc.
+
+### 8. `service-worker.js`
+
+- Service worker for the app, enabling caching and offline support.
+- Uses **Workbox** for caching assets and handling runtime requests like image caching.
+
+### 9. `serviceWorkerRegistration.js`
+
+- Registers the service worker in the app, enabling caching and offline functionality.
+
+---
 
 ## Installation & Setup
 

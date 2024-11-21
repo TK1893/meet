@@ -1,3 +1,4 @@
+// src\__tests__\NumberOfEvents.test.js
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'; // Add this line to import the 'userEvent' library
 import NumberOfEvents from '../components/NumberOfEvents';
